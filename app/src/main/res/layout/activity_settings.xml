@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/apiUrlEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="API URL" />
+
+    <Switch
+        android:id="@+id/isJsonSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is JSON Response" />
+
+    <EditText
+        android:id="@+id/jsonPathEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="JSON Path (e.g. result.value)" />
+
+    <EditText
+        android:id="@+id/targetValueEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Target Value" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+</LinearLayout>

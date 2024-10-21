@@ -1,0 +1,27 @@
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditTextPreference
+        app:key="apiUrl"
+        app:title="API URL"
+        app:useSimpleSummaryProvider="true"/>
+
+    <SwitchPreferenceCompat
+        app:key="isJson"
+        app:title="Is JSON Response"/>
+
+    <EditTextPreference
+        app:key="jsonPath"
+        app:title="JSON Path"
+        app:dependency="isJson"
+        app:useSimpleSummaryProvider="true"/>
+
+    <EditTextPreference
+        app:key="targetValue"
+        app:title="Target Value"
+        app:useSimpleSummaryProvider="true"/>
+
+    <Preference
+        app:key="alarmSound"
+        app:title="Choose Alarm Sound"
+        app:summary="Tap to select a custom alarm sound"/>
+</PreferenceScreen>
