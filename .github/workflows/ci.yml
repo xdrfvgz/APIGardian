@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install git zip unzip
+        git clone git@github.com:xdrfvgz/APIGardian.git
+        bash system_setup/install.sh
+    - name: Build 
+      run: |
+         export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+         gradle wrapper
+         ./gradlew assembleDebug
