@@ -42,5 +42,5 @@ jobs:
       uses: actions/upload-artifact@v3  # Aktualisiert auf v3
       with:
         name: app-debug.apk
-        path: $HOME/app-debug.apk
+        path: /home/runner/app-debug.apk
         if-no-files-found: error
