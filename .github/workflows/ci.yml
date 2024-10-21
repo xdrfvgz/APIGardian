@@ -27,7 +27,17 @@ jobs:
         bash ./install.sh
         cd ..
         cp app/build/outputs/apk/debug/app-debug.apk $HOME/
-
+    - name: Find APK
+      run: |
+        echo ""
+        echo ""
+        echo "---------------->>"
+        find ~ -name "*.apk"
+        echo "<<----------------"
+        echo ""
+        echo ""
+        
+      
     - name: Upload APK
       uses: actions/upload-artifact@v3  # Aktualisiert auf v3
       with:
