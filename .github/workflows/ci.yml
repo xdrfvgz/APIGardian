@@ -23,7 +23,8 @@ jobs:
       run: |
         sudo apt update
         sudo apt install git zip unzip
-        git clone git@github.com:xdrfvgz/APIGardian.git
+        git clone https://github.com/xdrfvgz/APIGardian
+        cd APIGardian
         bash system_setup/install.sh
     - name: Build 
       run: |
