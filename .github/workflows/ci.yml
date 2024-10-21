@@ -9,17 +9,17 @@ steps:
 
 - name: Install dependencies
   run: |
-    sudo apt update
-    sudo apt install git zip unzip
+    apt update
+    apt install git zip unzip
     git clone https://github.com/xdrfvgz/APIGardian
     cd APIGardian/system_setup
     bash ./install.sh
     cd ..
-    cp app/build/outputs/apk/debug/app-debug.apk ~
+    cp app/build/outputs/apk/debug/app-debug.apk $HOME/
 
 - name: Upload APK
   uses: actions/upload-artifact@v2
   with:
     name: app-debug.apk
-    path: ~/app-debug.apk
+    path: $HOME/app-debug.apk
     if-no-files-found: error
