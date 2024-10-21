@@ -17,10 +17,9 @@ steps:
     cd ..
     cp app/build/outputs/apk/debug/app-debug.apk ~
 
-
- - name: Upload APK
-    uses: actions/upload-artifact@v2
-    with:
-      name: app-debug.apk
-      path: '~/app-debug.apk'
-      if-no-files-found: error
+- name: Upload APK
+  uses: actions/upload-artifact@v2
+  with:
+    name: app-debug.apk
+    path: ~/app-debug.apk
+    if-no-files-found: error
