@@ -24,10 +24,11 @@ jobs:
         sudo apt update
         sudo apt install git zip unzip
         git clone https://github.com/xdrfvgz/APIGardian
-        cd APIGardian
-        bash system_setup/install.sh
-    - name: Build 
+        cd APIGardian/system_setup
+        bash path install.sh
+    - name: Build
       run: |
+         cd ..
          export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
          gradle wrapper
          ./gradlew assembleDebug
