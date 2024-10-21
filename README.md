@@ -14,7 +14,10 @@ APIGuardian is an Android application that allows users to monitor specified API
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository:
+   ```
+   git clone https://github.com/xdrfvgz/APIGuardian
+   ```
 2. Ensure you have Java Development Kit (JDK) installed
 
 ## Building the APK
@@ -46,33 +49,14 @@ To build the debug APK, follow these steps:
 6. APIGuardian will check the API every minute and trigger an alarm if the target value is found
 7. Press "STOP MONITORING" to stop the monitoring service
 
-## Project Structure
-
-- `MainActivity`: The main screen of the app, displaying current settings and monitoring status
-- `SettingsActivity`: Allows users to configure monitoring parameters
-- `APIMonitorService`: Background service that performs API checks
-- `SecureStorage`: Handles encrypted storage of sensitive data
-
-## Dependencies
-
-- OkHttp: For making API requests
-- Kotlin Coroutines: For asynchronous programming
-- AndroidX Security: For encrypted shared preferences
-- MediaPlayer: For playing alarm sounds
-
-## Permissions
-
-- `INTERNET`: Required for making API requests
-- `ACCESS_NETWORK_STATE`: For checking network connectivity
-
 ## Contributing
 
 Contributions to APIGuardian are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[Insert your chosen license here]
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-[Your contact information or project maintainer's contact]
+For questions, support or bug reports, please open an issue on the [GitHub repository](https://github.com/xdrfvgz/APIGuardian/issues).
