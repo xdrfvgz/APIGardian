@@ -1,7 +1,7 @@
 echo ""
-echo "Install apt packeges:"
+echo "Install apt packages:"
 echo ""
-bash ./restore_apt_packages.sh
+#bash ./restore_apt_packages.sh
 
 #echo ""
 #echo "create venv:"
@@ -10,6 +10,6 @@ bash ./restore_apt_packages.sh
 #source apk/bin/activate
 
 #echo ""
-#echo "Install pip packeges:"
+#echo "Install pip packages:"
 #echo ""
 #bash ./restore_pip_packages.sh
