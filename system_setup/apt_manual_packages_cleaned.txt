@@ -341,7 +341,6 @@ libhttpcore-java
 libibverbs1
 libice-dev
 libice6
-libicu74
 libidn2-0
 libinih1
 libintl-perl
@@ -395,7 +394,6 @@ libksba8
 libkxml2-java
 liblcms2-2
 libldap-common
-libldap2
 liblmdb0
 liblocale-gettext-perl
 liblogback-java
@@ -826,7 +824,6 @@ tnftp
 tpm-udev
 trace-cmd
 tzdata
-ubuntu-kernel-accessories
 ubuntu-keyring
 ubuntu-minimal
 ubuntu-mono
