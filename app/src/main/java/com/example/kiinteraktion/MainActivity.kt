@@ -1,5 +1,5 @@
-#package com.example.kiinteraktion
-import com.example.kiinteraktion.APIMonitorService
+package com.example.kiinteraktion
+
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent

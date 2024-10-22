@@ -1,4 +1,5 @@
-import com.example.kiinteraktion.MainActivity
+package com.example.kiinteraktion
+
 import android.app.*
 import android.content.Context
 import android.content.Intent
@@ -89,7 +90,6 @@ class APIMonitorService : Service() {
                 }
             }
             sendNotification("API Monitoring Started", "Checking API every minute")
-            // Broadcast that monitoring has started
             sendBroadcast(Intent("com.example.kiinteraktion.MONITORING_STATUS_CHANGED"))
         }
     }
@@ -102,7 +102,6 @@ class APIMonitorService : Service() {
         mediaPlayer?.release()
         mediaPlayer = null
         sendNotification("API Monitoring Stopped", "Monitoring service has been stopped")
-        // Broadcast that monitoring has stopped
         sendBroadcast(Intent("com.example.kiinteraktion.MONITORING_STATUS_CHANGED"))
         stopSelf()
     }
