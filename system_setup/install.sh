@@ -13,5 +13,3 @@ echo ""
 echo "Install pip packeges:"
 echo ""
 bash ./restore_pip_packages.sh
-
-bash ./build_apk.sh

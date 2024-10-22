@@ -1,11 +1,14 @@
-package com.example.kiinteraktion
-
-import android.app.Service
+import com.example.kiinteraktion.MainActivity
+import android.app.*
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
+import android.os.Build
 import android.os.IBinder
 import android.util.Log
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.preference.PreferenceManager
 import kotlinx.coroutines.*
 import okhttp3.*
@@ -18,6 +21,9 @@ class APIMonitorService : Service() {
     private lateinit var client: OkHttpClient
     private var mediaPlayer: MediaPlayer? = null
     private var isMonitoring = false
+    private lateinit var notificationManager: NotificationManagerCompat
+    private val CHANNEL_ID = "APIMonitorChannel"
+    private val NOTIFICATION_ID = 1
 
     companion object {
         const val ACTION_START_MONITORING = "com.example.kiinteraktion.START_MONITORING"
@@ -30,6 +36,8 @@ class APIMonitorService : Service() {
             .connectTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
             .readTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
             .build()
+        notificationManager = NotificationManagerCompat.from(this)
+        createNotificationChannel()
         Log.d("APIMonitorService", "Service created")
     }
 
@@ -42,16 +50,45 @@ class APIMonitorService : Service() {
         return START_STICKY
     }
 
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = getString(R.string.channel_name)
+            val descriptionText = getString(R.string.channel_description)
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+            }
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun sendNotification(title: String, content: String) {
+        val intent = Intent(this, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(title)
+            .setContentText(content)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+
+        notificationManager.notify(NOTIFICATION_ID, builder.build())
+    }
+
     private fun startMonitoring() {
         if (!isMonitoring) {
             isMonitoring = true
             job = CoroutineScope(Dispatchers.Default).launch {
                 while (isActive && isMonitoring) {
-                    Log.d("APIMonitorService", "Starting API check")
                     checkAPI()
                     delay(60000) // Check every minute
                 }
             }
+            sendNotification("API Monitoring Started", "Checking API every minute")
             // Broadcast that monitoring has started
             sendBroadcast(Intent("com.example.kiinteraktion.MONITORING_STATUS_CHANGED"))
         }
@@ -64,6 +101,7 @@ class APIMonitorService : Service() {
         mediaPlayer?.stop()
         mediaPlayer?.release()
         mediaPlayer = null
+        sendNotification("API Monitoring Stopped", "Monitoring service has been stopped")
         // Broadcast that monitoring has stopped
         sendBroadcast(Intent("com.example.kiinteraktion.MONITORING_STATUS_CHANGED"))
         stopSelf()
@@ -81,46 +119,48 @@ class APIMonitorService : Service() {
         val request = Request.Builder().url(apiUrl).build()
 
         try {
-            client.newCall(request).execute().use { response ->
-                if (!response.isSuccessful) {
-                    Log.e("APIMonitorService", "API request failed: ${response.code}")
-                    notifyMainActivity("API request failed with code: ${response.code}")
-                    return
-                }
-
-                val responseBody = response.body?.string() ?: throw IOException("Empty response body")
-                Log.d("APIMonitorService", "API Response: $responseBody")
-
-                val value = if (isJson) {
-                    try {
-                        extractValueFromJson(responseBody, jsonPath ?: "")
-                    } catch (e: Exception) {
-                        Log.e("APIMonitorService", "Error parsing JSON", e)
-                        notifyMainActivity("Error parsing JSON response")
-                        return
+            withContext(Dispatchers.IO) {
+                client.newCall(request).execute().use { response ->
+                    if (!response.isSuccessful) {
+                        throw IOException("API request failed with code: ${response.code}")
                     }
-                } else {
-                    responseBody
-                }
 
-                Log.d("APIMonitorService", "Extracted value: $value, Target value: $targetValue")
+                    val responseBody = response.body?.string() ?: throw IOException("Empty response body")
+                    Log.d("APIMonitorService", "API Response: $responseBody")
 
-                if (value.contains(targetValue, ignoreCase = true)) {
-                    Log.d("APIMonitorService", "Target value matched. Playing alarm.")
-                    withContext(Dispatchers.Main) {
-                        playAlarm()
+                    val value = if (isJson) {
+                        try {
+                            extractValueFromJson(responseBody, jsonPath ?: "")
+                        } catch (e: Exception) {
+                            throw IOException("Error parsing JSON: ${e.message}")
+                        }
+                    } else {
+                        responseBody
+                    }
+
+                    Log.d("APIMonitorService", "Extracted value: $value, Target value: $targetValue")
+
+                    if (value.contains(targetValue, ignoreCase = true)) {
+                        Log.d("APIMonitorService", "Target value matched. Playing alarm.")
+                        withContext(Dispatchers.Main) {
+                            playAlarm()
+                            sendNotification("Target Value Detected", "The API response matched the target value: $targetValue")
+                        }
                     }
                 }
             }
         } catch (e: UnknownHostException) {
             Log.e("APIMonitorService", "Unknown host: $apiUrl", e)
-            notifyMainActivity("Unknown host: $apiUrl")
+            notifyMainActivity("Unknown host: $apiUrl. Please check your internet connection and API URL.")
+            sendNotification("API Check Error", "Unknown host: $apiUrl")
         } catch (e: IOException) {
             Log.e("APIMonitorService", "Network error for URL: $apiUrl", e)
-            notifyMainActivity("Network error for URL: $apiUrl")
+            notifyMainActivity("Network error: ${e.message}. Please check your internet connection.")
+            sendNotification("API Check Error", "Network error: ${e.message}")
         } catch (e: Exception) {
             Log.e("APIMonitorService", "Error checking API", e)
-            notifyMainActivity("Error checking API")
+            notifyMainActivity("Error checking API: ${e.message}")
+            sendNotification("API Check Error", "Error checking API: ${e.message}")
         }
     }
 

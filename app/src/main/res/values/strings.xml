@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">API Monitor</string>
+    <string name="channel_name">API Monitor Notifications</string>
+    <string name="channel_description">Notifications for API monitoring status and events</string>
 </resources>

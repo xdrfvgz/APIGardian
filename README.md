@@ -1,3 +1,4 @@
+
 # APIGuardian
 
 APIGuardian is an Android application that allows users to monitor specified API endpoints and trigger an alarm when a target value is detected in the API response.
@@ -12,21 +13,54 @@ APIGuardian is an Android application that allows users to monitor specified API
 - Background monitoring service
 - Secure storage for sensitive data
 
-## Setup
+## Setup and Build Instructions
 
-1. Clone the repository:
+### 1. Clone the Repository
+
+First, clone the APIGuardian repository to your local machine:
+
+```
+git clone https://github.com/xdrfvgz/APIGuardian
+cd APIGuardian
+```
+
+### 2. Prepare Ubuntu System for APK Compilation
+
+This project includes an install script that prepares your Ubuntu system for APK compilation. To use it:
+
+1. Navigate to the system_setup directory:
    ```
-   git clone https://github.com/xdrfvgz/APIGuardian
+   cd system_setup
    ```
-2. Ensure you have Java Development Kit (JDK) installed
 
-## Building the APK
+2. Make the install script executable:
+   ```
+   chmod +x install.sh
+   ```
 
-To build the debug APK, follow these steps:
+3. Run the script with sudo privileges:
+   ```
+   sudo ./install.sh
+   ```
 
-1. Open a terminal in the project root directory
+This script will:
+- Update system packages
+- Install required dependencies (e.g., OpenJDK, Gradle, Android SDK)
+- Set up environment variables for Android SDK
+- Install specific Android SDK components needed for compilation
+
+Note: This script is designed for Ubuntu systems. It may need modifications for other Linux distributions.
+
+### 3. Building the APK
+
+After preparing your system, you can build the debug APK:
+
+1. Return to the project root directory:
+   ```
+   cd ..
+   ```
+
 2. Run the following commands:
-
    ```
    ./gradlew wrapper
    ./gradlew assembleDebug
@@ -34,9 +68,23 @@ To build the debug APK, follow these steps:
 
 3. The debug APK will be generated in the `app/build/outputs/apk/debug/` directory
 
+## Downloading APK from GitHub Actions
+
+If you prefer not to build the APK yourself, you can download the latest version built by GitHub Actions:
+
+1. Go to the [APIGuardian GitHub repository](https://github.com/xdrfvgz/APIGuardian)
+2. Click on the "Actions" tab at the top of the repository page
+3. In the left sidebar, click on the workflow that builds the APK (e.g., "Android CI")
+4. From the list of workflow runs, click on the most recent successful run (marked with a green checkmark)
+5. Scroll down to the "Artifacts" section
+6. Click on the artifact name (e.g., "app-debug") to download the APK
+7. Once downloaded, transfer the APK to your Android device and install it
+
+Note: You may need to enable "Install from unknown sources" in your Android settings to install the APK.
+
 ## Usage
 
-1. Install the generated APK on your Android device
+1. Install the generated or downloaded APK on your Android device
 2. Launch APIGuardian
 3. Go to Settings and configure:
    - API URL

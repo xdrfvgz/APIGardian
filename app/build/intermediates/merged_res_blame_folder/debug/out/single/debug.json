@@ -1,74 +1,78 @@
 [
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/raw_default_alarm_sound.wav.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/raw/default_alarm_sound.wav"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/xml_root_preferences.xml.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/xml/root_preferences.xml"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/layout_ai_response_item.xml.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/layout/ai_response_item.xml"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/layout_settings_activity.xml.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/layout/settings_activity.xml"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/layout_activity_settings.xml.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/layout/activity_settings.xml"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/layout_activity_settings.xml.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/layout/activity_settings.xml"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/layout_activity_main.xml.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/layout/activity_main.xml"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_launcher_ic.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-hdpi/launcher_ic.png"
+        "merged": "com.example.kiinteraktion.app-merged_res-30:/drawable_ic_notification.xml.flat",
+        "source": "com.example.kiinteraktion.app-main-32:/drawable/ic_notification.xml"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/xml_root_preferences.xml.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/xml/root_preferences.xml"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/layout_settings_activity.xml.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/layout/settings_activity.xml"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_launcher_ic.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-hdpi/launcher_ic.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/raw_default_alarm_sound.wav.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/raw/default_alarm_sound.wav"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/layout_ai_response_item.xml.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/layout/ai_response_item.xml"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_launcher_ic_round.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-hdpi/launcher_ic_round.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_launcher_ic_round.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-hdpi/launcher_ic_round.png"
     },
     {
-        "merged": "com.example.kiinteraktion.app-merged_res-30:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.kiinteraktion.app-main-32:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-merged_res-30:/layout_activity_main.xml.flat",
+        "source": "/home/ubuntu/.gradle/daemon/8.10.2/com.example.kiinteraktion.app-main-32:/layout/activity_main.xml"
     }
 ]
